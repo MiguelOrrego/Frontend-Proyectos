@@ -1,0 +1,38 @@
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Menu Principal</title>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    
+    </head>
+
+    
+      <div class="d-flex" id="wrapper">
+    
+        <!-- Sidebar -->
+        
+        <div class="bg-dark border-right" id="sidebar-wrapper">
+          <div class="list-group list-group-flush">
+            <div class="sidebar-heading text-center"><i class="fas fa-user-circle fa-5x"></i>
+            </div>
+            <a routerLink="misproyectos"  class="list-group-item list-group-item-action bg-dark text-white">Mis Proyectos</a>
+            <a  class="list-group-item list-group-item-action bg-dark text-white">Editar Perfil</a>
+            <a  class="list-group-item list-group-item-action bg-dark text-white">Cambiar Contraseña</a>
+            <a  class="list-group-item list-group-item-action bg-dark text-white">Mi Actividad</a>
+
+          </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+    
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+          <div class="container-fluid">
+              <router-outlet></router-outlet>
+          </div>
+        </div>
+        
+      
+      </div>
+

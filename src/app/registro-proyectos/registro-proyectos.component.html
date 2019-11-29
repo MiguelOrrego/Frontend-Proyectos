@@ -1,0 +1,119 @@
+
+<div class="card mx-auto"  style="width: 53rem;">
+    <div class="card-body">
+        <h4 class="card-title">Registrar Proyecto</h4> <hr>
+        <form (submit)="saveProject(nombre,objetivos,descripcion,compromiso_social,
+        videos,costo_minimo,costo_optimo,ubicacion)">
+    
+        <div class="form-row">
+            <div class="form-group col-md-12">
+            <label for="inputNombre">Nombre</label>
+            <input type="text"  #nombre name="nombre" class="form-control" id="inputNombre" placeholder="Nombre">
+            </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="inputObjetivos">Objetivos</label>
+                <textarea  #objetivos required name="objetivos" class="form-control" placeholder="Objetivos" id="inputObjetivos" cols="30" rows="5"></textarea>
+            </div>
+        </div>
+    
+        <div class="form-row">
+            <div class="form-group col-md-12">
+            <label for="inputAddress">Descripción</label>
+            <textarea  #descripcion required name="descripcion" class="form-control" placeholder="Objetivos" id="inputObjetivos" cols="30" rows="5"></textarea>
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCs">Compromiso Social:</label>
+                <div class="custom-control custom-radio">
+                <input type="radio"  #compromiso_social  value="Software Libre"  id="customRadio1" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio1">Software Libre</label>
+                </div>
+                <div class="custom-control custom-radio">
+                <input type="radio"  #compromiso_social value="Educativo"  id="customRadio2" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio2">Educativo</label>
+                </div>
+                <div class="custom-control custom-radio">
+                <input type="radio"  #compromiso_social value="Generar Empleo"  id="customRadio3" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio3">Generar Empleo</label>
+                </div>
+                <div class="custom-control custom-radio">
+                <input type="radio"  #compromiso_social value="Solidario"  id="customRadio4" name="customRadio" class="custom-control-input">
+                <label class="custom-control-label" for="customRadio4">Solidario</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio"  #compromiso_social value="Desarrollo Agrorural"  id="customRadio5" name="customRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio5">Desarrollo Agrorural</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+        <div class="form-group col-md-6">
+                <label for="signomoneda">Costo Minimo</label>
+                <div class="input-group">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="signo"><i class="fas fa-dollar-sign"></i></span>
+                    </div>
+                <input type="number"  #costo_minimo required name="costo_minimo" class="form-control" id="CostoMinimo">
+            </div>
+            </div>
+            <div class="form-group col-md-6">
+                    <label for="signomoneda">Costo Optimo</label>
+                    <div class="input-group">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="signo"><i class="fas fa-dollar-sign"></i></span>
+                        </div>
+                    <input type="number" #costo_optimo required name="costo_optimo" class="form-control" id="CostoOptimo">
+                </div>
+                </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="form-group col-md-12">
+            <label for="FotosVideos">Adjuntar Foto De Portado Del Proyecto</label>
+            <div class="custom-file">
+                <input type="file" (change)="onPhotoSelected($event)" #photoInput name="imagenes" class="d-none " id="FotosVideos" accept="image/*">
+                <img [src]="photoSelected || 'assets/no-image.png'" class="img-fluid my-60" alt="no image" height="200" width="200" (click)="photoInput.click()" >
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+            <label for="Video">URL del video Promocional</label>
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="Video"><i class="fab fa-youtube"></i>URL</span>
+                </div>
+                <input type="text"  #videos required  name="url" class="form-control" id="Video">
+            </div>
+
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+            <label for="ubicacion">Ubicación Del Proyecto</label>
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="ubicacion"><i class="fas fa-map-marker-alt"></i></span>
+                </div>
+                <input type="text"  #ubicacion required  name="ubicacion" class="form-control" id="ubicacion">
+            </div>
+
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-primary px-md-5 color">Registrar</button>
+        
+        </form>
+    </div>
+</div>  
+
+

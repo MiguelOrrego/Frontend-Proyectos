@@ -1,0 +1,39 @@
+<br>
+<div class="container p-3">
+<div class="card border-0 mx-auto" style="width: 65rem;">
+ <div class="card-body">
+  <h4 class="card-title">Mis Proyectos</h4> <hr>   
+  <a class="btn btn-danger float-right"  routerLink="/formproyectos">
+        Crear Proyecto
+  </a>
+    <br><br><br><br>
+<div class="row">
+<div class="col-md-4 p-4" *ngFor="let projects of project">
+    <div class="card card-photo">
+       <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+        {{projects.nombre}}
+        <button class="btn btn-danger">
+                <i class="fas fa-lock fa-1x"></i>        
+        </button>
+       </div> 
+       <img [src]="'http://localhost:3200/' + projects.image" alt="card-img-top"  class="img-card-top w-90 img-fluid">
+       <div class="card-body ">
+          Conseguido :  COP ${{projects.dinero_obtenido}}
+          <br> 
+          Creado el  :  {{projects.fecha | date: 'yyyy-MM-dd'}}
+          <br>
+           <br>
+           <br>
+          <b>DESCRIPCIÓN:</b> 
+         <p>{{projects.descripcion}}</p>
+         <a  [routerLink]="['/formproyectos/edit',projects.id]"class="btn btn-info btn-block" >
+             EDITAR PROYECTO
+         </a>
+       </div>    
+       
+
+    </div>
+</div>
+
+</div>
+</div>
